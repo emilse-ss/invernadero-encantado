@@ -20,8 +20,11 @@ Informes avanzados, avisos automáticos, integración con sensores o sistemas ex
 
 ## 6. Reglas de negocio
 - Una planta nunca regada cuenta desde su fecha de registro.
+- Nombre, especie, ubicación e intervalo son obligatorios al registrar una planta.
 - El intervalo de riego debe ser un número entero de días igual o superior a 1.
 - Un riego registrado debe tener una fecha que no sea futura. Se permiten fechas pasadas para corregir registros olvidados.
+- Solo se puede registrar un riego para una planta existente.
+- La cantidad de agua de un riego debe ser mayor que 0.
 - Si existen varios riegos, el cálculo usa el más reciente.
 
 ## 7. Supuestos, marcados con [SUPUESTO]
