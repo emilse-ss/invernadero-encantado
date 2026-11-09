@@ -62,38 +62,42 @@ Como cuidador, quiero consultar qué plantas necesitan riego y cuáles pueden es
 #### T-01 · Preparar la estructura de planta
 - **Tipo:** Configuración.
 - **Descripción:** Preparar la organización técnica de la capa de modelos y rutas necesaria para comenzar el registro de plantas, sin implementar todavía el comportamiento completo.
+- **Estado:** hecho.
 - **Definition of Done:**
-  - [ ] La estructura prevista para plantas está disponible.
-  - [ ] Las dependencias necesarias están configuradas.
-  - [ ] La configuración no introduce credenciales ni datos sensibles.
+  - [x] La estructura prevista para plantas está disponible.
+  - [x] Las dependencias necesarias están configuradas.
+  - [x] La configuración no introduce credenciales ni datos sensibles.
 - **Dependencias:** ninguna.
 
 #### T-02 · Definir las reglas de una planta
 - **Tipo:** Modelo/Dominio.
 - **Descripción:** Aplicar las reglas de datos obligatorios, intervalo entero mínimo de un día y fecha inicial desde la que cuenta una planta nunca regada.
+- **Estado:** pendiente.
 - **Definition of Done:**
-  - [ ] Nombre, especie, ubicación e intervalo son obligatorios.
-  - [ ] Solo se aceptan intervalos enteros iguales o mayores que uno.
+  - [x] Nombre, especie, ubicación e intervalo son obligatorios.
+  - [x] Solo se aceptan intervalos enteros iguales o mayores que uno.
   - [ ] Una planta nunca regada conserva su fecha de registro como inicio del cálculo.
 - **Dependencias:** T-01.
 
 #### T-03 · Exponer el registro de plantas
 - **Tipo:** Endpoint/API.
 - **Descripción:** Permitir que el cuidador registre una planta y obtener su confirmación o la indicación visible de por qué el registro no fue aceptado.
+- **Estado:** pendiente.
 - **Definition of Done:**
   - [ ] Una planta válida queda registrada.
-  - [ ] Los datos obligatorios ausentes impiden el registro.
-  - [ ] Un intervalo inválido impide el registro.
+  - [x] Los datos obligatorios ausentes impiden el registro.
+  - [x] Un intervalo inválido impide el registro.
 - **Dependencias:** T-02.
 
 #### T-04 · Comprobar el registro de plantas
 - **Tipo:** Test.
 - **Descripción:** Cubrir los casos válidos y rechazados de registro de plantas desde la perspectiva del cuidador.
+- **Estado:** pendiente.
 - **Definition of Done:**
-  - [ ] Hay pruebas para una planta válida.
-  - [ ] Hay pruebas para cada dato obligatorio ausente.
+  - [x] Hay pruebas para una planta válida.
+  - [x] Hay pruebas para cada dato obligatorio ausente.
   - [ ] Hay pruebas para intervalos menores que uno, decimales, negativos y vacíos.
-  - [ ] Las pruebas pasan con el resto del proyecto.
+  - [x] Las pruebas pasan con el resto del proyecto.
 - **Dependencias:** T-03.
 
 ### HU-1.3 · Registrar un riego
@@ -101,39 +105,43 @@ Como cuidador, quiero consultar qué plantas necesitan riego y cuáles pueden es
 #### T-05 · Preparar la estructura de riegos
 - **Tipo:** Configuración.
 - **Descripción:** Preparar la organización técnica de la capa de modelos y rutas necesaria para registrar riegos y conectarlos con plantas existentes.
+- **Estado:** hecho.
 - **Definition of Done:**
-  - [ ] La estructura prevista para riegos está disponible.
-  - [ ] La estructura distingue una planta existente de una inexistente.
-  - [ ] No se introducen credenciales ni datos sensibles.
+  - [x] La estructura prevista para riegos está disponible.
+  - [x] La estructura distingue una planta existente de una inexistente.
+  - [x] No se introducen credenciales ni datos sensibles.
 - **Dependencias:** T-01.
 
 #### T-06 · Definir las reglas de un riego
 - **Tipo:** Modelo/Dominio.
 - **Descripción:** Aplicar las reglas sobre planta existente, fecha pasada o actual, prohibición de fechas futuras, cantidad mayor que cero y selección del riego más reciente.
+- **Estado:** hecho.
 - **Definition of Done:**
-  - [ ] Solo se acepta una planta existente.
-  - [ ] Solo se aceptan cantidades de agua mayores que cero.
-  - [ ] No se aceptan fechas futuras.
-  - [ ] Entre varios riegos se reconoce el más reciente.
+  - [x] Solo se acepta una planta existente.
+  - [x] Solo se aceptan cantidades de agua mayores que cero.
+  - [x] No se aceptan fechas futuras.
+  - [x] Entre varios riegos se reconoce el más reciente.
 - **Dependencias:** T-02 y T-05.
 
 #### T-07 · Exponer el registro de riegos
 - **Tipo:** Endpoint/API.
 - **Descripción:** Permitir que el cuidador registre un riego válido y recibir una indicación visible cuando la planta no exista o los datos sean inválidos.
+- **Estado:** hecho.
 - **Definition of Done:**
-  - [ ] Un riego válido queda asociado a una planta existente.
-  - [ ] Un riego pasado olvidado queda registrado correctamente.
-  - [ ] Las fechas futuras y las cantidades no positivas impiden el registro.
+  - [x] Un riego válido queda asociado a una planta existente.
+  - [x] Un riego pasado olvidado queda registrado correctamente.
+  - [x] Las fechas futuras y las cantidades no positivas impiden el registro.
 - **Dependencias:** T-06.
 
 #### T-08 · Comprobar el registro de riegos
 - **Tipo:** Test.
 - **Descripción:** Validar el registro de riegos desde la perspectiva del cuidador, incluidos los casos de planta inexistente, fechas futuras y cantidades no válidas.
+- **Estado:** pendiente.
 - **Definition of Done:**
-  - [ ] Hay pruebas para riegos actuales y pasados válidos.
+  - [x] Hay pruebas para riegos actuales y pasados válidos.
   - [ ] Hay pruebas para planta inexistente, fecha futura y cantidad cero o negativa.
-  - [ ] Hay pruebas para elegir el riego más reciente entre varios registros.
-  - [ ] Las pruebas pasan con el resto del proyecto.
+  - [x] Hay pruebas para elegir el riego más reciente entre varios registros.
+  - [x] Las pruebas pasan con el resto del proyecto.
 - **Dependencias:** T-07.
 
 ### Orden de ejecución sugerido
